@@ -7,7 +7,7 @@ tidybayes: Bayesian analysis + tidy data + geoms <img id="tidybayes_logo" src="m
 ![Preview of tidybayes plots](man/figures/preview.png)
 
 `tidybayes` is an R package that aims to make it easy to integrate popular Bayesian modelling methods into a tidy data + ggplot workflow.
-
+[Tidy data and Bayesian analysis make uncertainty visualization fun](http://www.mjskay.com/presentations/openvisconf2018-bayes-uncertainty-2.pdf)
 [Tidy](http://cran.r-project.org/web/packages/tidyr/vignettes/tidy-data.html) data frames (one observation per row) are particularly convenient for use in a variety of R data manipulation and visualization packages. However, when using MCMC / Bayesian samplers like JAGS or Stan in R, we often have to translate this data into a form the sampler understands, and then after running the model, translate the resulting sample (or predictions) into a more tidy format for use with other R functions. `tidybayes` aims to simplify these two common (often tedious) operations:
 
 -   **Composing data** for use with the sampler. This often means translating data from a `data.frame` into a `list` , making sure `factors` are encoded as numerical data, adding variables to store the length of indices, etc. This package helps automate these operations using the `compose_data` function, which automatically handles data types like `numeric`, `logical`, `factor`, and `ordinal`, and allows easy extensions for converting other datatypes into a format the sampler understands by providing your own implementation of the generic `as_data_list`.
